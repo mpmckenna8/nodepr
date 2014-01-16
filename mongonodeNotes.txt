@@ -1,0 +1,2 @@
+to install a node package globally
+npm install -g moduleName
