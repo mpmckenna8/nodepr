@@ -3,9 +3,9 @@ var http = require('http');
  
 function  partime(time){
 	return {
-		hour: time.getHours;
-		minute: time.getMinutes;
-		second: time.getSeconds;
+		hour: time.getHours(),
+		minute: time.getMinutes(),
+		second: time.getSeconds()
 	}
 
 }
@@ -14,32 +14,31 @@ function  partime(time){
 function unixtime(time){
 return {unixtime:time.getTime()}
 }
-var repath = '/api/parsetime'
-var  unirepath = '/api/unixtime'
+var repath = '/api/parsetime/'
+var  unirepath = '/api/unixtime/'
 
 var server = http.createServer(function(req, res){
 	//need to start this shabang using url
 
-	var parsedURL = url.parse(req.url)
+	var parsedURL = url.parse(req.url, true)
 	var time = new Date(parsedURL.query.iso)
-
-if(/^repath.test(req.url))
+	var result
+if(/^\/api\/parsetime/.test(req.url))
 	result = partime(time);
 
-if(
+else if(/^\/api\/unixtime/.test(req.url))
+	result = unixtime(time);
 
 
-	if(req.method != 'GET') return res.end('this needs to be a get request from the right path')
 
-	
+if (result){
+	res.writeHead(200, {'Content-Type':'application/json'})
+res.end(JSON.stringify(result))}
+else{
+	res.writehead(404)
+	res.end()}
 
-
-console.log('I think my server is connected');
-socket.on('end', function(){
-console.log('server connection ended')
-})
-socket.end(now())
-
+///	if(req.method != 'GET') return res.end('this needs to be a get request from the right path')
 })
 
  
