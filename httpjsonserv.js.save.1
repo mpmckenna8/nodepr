@@ -1,0 +1,24 @@
+var net = require('net');
+var url = require('url');
+var http = require('http');
+ 
+var path = '/api/unixtime'
+,  repath = '/api/parsetime'
+
+var server = http.createServer(function(req, res){
+	if(req.method != 'GET') return res.end('this needs to be a get request from the right path')
+
+	
+
+
+console.log('I think my server is connected');
+socket.on('end', function(){
+console.log('server connection ended')
+})
+socket.end(now())
+
+})
+
+ 
+server.listen(process.argv[2])
+
