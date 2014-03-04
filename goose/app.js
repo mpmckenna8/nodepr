@@ -7,11 +7,13 @@ mongoose.connect("mongodb://localhost", function(err){
   console.log('we done connected!');
 
   var app = express();
+
   routes(app);	
-})
+
   app.listen(3000,function(){
 	console.log('hopefully something is a listening on port 3000');
+
+})
 })
 
-  mongoose.disconnect();
-})
+
