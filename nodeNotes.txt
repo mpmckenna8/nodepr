@@ -1,5 +1,18 @@
 node Notes
 
+For help with node:
+
+man npm node
+
+need to look up:
+ nom-init 
+for help with my package.json file.
+
+    docs        npm docs <pkgname>
+                npm docs .
+
+ 
+
 doing learnyousome node by typing learnyounode in Terminal
 
 var fs = require('fs');
@@ -28,3 +41,8 @@ fs.readFile(path, 'utf8', function(err,data) {
 
 
 For learnyounode Filtered LS I need to remember that the file ext I want to filter by is in process.argv[3]
+
+
+
+Comparison operators are a fancy(not realy) shorthand for if else statements that real developers use i guess when there’s just 2 things. or maybe you can do multiple.
+
