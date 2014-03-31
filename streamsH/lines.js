@@ -7,10 +7,10 @@ var tr = through(function(buf){
 
 var line = buf.toString();
 
-   this.queue(linecou%2===0
+this.queue(linecou%2===0
      ? line.toLowerCase() +'\n'
      : line.toUpperCase() + '\n'
-); 
+);
 linecou ++
 });
 
